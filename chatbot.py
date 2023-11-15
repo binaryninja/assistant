@@ -1,8 +1,8 @@
 import openai
-import myapikeys
+import os
 from text_speech_utils import *
 
-openai.api_key = myapikeys.OPENAI_KEY
+openai.api_key = os.environ.get("OPENAI_API_KEY") 
 input_audio_filename = 'input.wav'
 
 messages = [{"role": "system", "content": "You are a helpful assistant."}]
